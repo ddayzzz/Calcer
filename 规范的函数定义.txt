@@ -1,0 +1,10 @@
+func myfunc1(x,y) x+y*sin(x*y)
+func myfunc2() 2+PI
+func myfunc3(x, y) x+y x=参数1;y=参数2
+
+
+def x,y,z=5,6
+def i,j,k=x+5,y+3
+
+
+func myfunc1(x,y)  func myfunc2(x,y,z) func myfunc3(x,y,z,lk) func myfunc4()

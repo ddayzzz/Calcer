@@ -1,0 +1,46 @@
+void vaild_parameter(const std::string &exp)
+{
+	//正则表达式字符串定义
+	//head:表示语句的使用
+	std::string regex_head_func = "func[\\s]+([a-zA-Z]+[a-zA-Z0-9]*)\\(";
+	std::string regex_head_def = "def";
+	//函数的变量名
+	std::string regex_func_parameters = "([a-zA-Z]+[a-zA-Z0-9]*)";
+	/*函数的定义*/
+	std::string input;
+	std::regex re_head_func("func[\\s]+([a-zA-Z]+[a-zA-Z0-9]*)\\(");
+	std::regex re_func_parameter("([a-zA-Z]+[a-zA-Z0-9]*)");
+	std::regex re_func_spilt("([\\s]*(,)[\\s]*){1,1}");
+	std::regex re_func_endofParameters("\\)[\\s]+");
+	while (std::getline(std::cin, input))
+	{
+		/*
+		for (std::sregex_iterator iter(input.cbegin(), input.cend(), re_head_func), endit; iter != endit; ++iter)
+		{
+		std::cout << "Matched:" << iter->str() << std::endl;
+		std::cout << "	Sub matches:" << std::endl;
+		auto jd = *iter;
+		auto jjjj = jd[2];
+		for (auto beg = 0; beg <= iter->length(); ++beg)
+		{
+		std::cout << "		submatch[" << beg << "]:" << iter->operator[](beg).str() << std::endl;
+		auto j = iter->operator[](beg);
+		std::cout << "			count:" << j.length() << std::endl;
+		}
+		}
+		*/
+		if (std::regex_search(input, re_head_func))
+		{
+			//函数的定义
+			auto suffix_begin = input.begin() + input.find_first_of('(');
+			auto suffix_end = suffix_begin + input.find_first_of(')');
+			for (std::sregex_iterator iter(suffix_begin, suffix_end, re_func_parameter), endit; iter != endit; ++iter)
+			{
+
+			}
+
+		}
+	}
+	
+	
+}

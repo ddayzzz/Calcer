@@ -1,0 +1,25 @@
+while (std::getline(std::cin, s))
+	{
+		/* ¶à¸öÆ¥Åä
+		for (std::sregex_iterator iter(s.cbegin(), s.cend(), re), endit; iter != endit; ++iter)
+			{
+				std::cout << iter->str() << std::endl;
+			}
+		*/
+		for (std::sregex_iterator iter(s.cbegin(), s.cend(), re), endit; iter != endit; ++iter)
+		{
+			std::cout << "Matched:"<<iter->str() << std::endl;
+			std::cout << "	Sub matches:"<<std::endl;
+			for (auto beg = 0; beg < iter->length(); ++beg)
+			{
+				std::cout << "		submatch[" << beg << "]:" << iter->operator[](beg).str() << std::endl;
+			}
+		}
+		//auto j = std::regex_search(s, re);
+		//std::cout << std::boolalpha << j << std::endl;
+		//if (j)
+		//{
+			
+
+		//}
+	}

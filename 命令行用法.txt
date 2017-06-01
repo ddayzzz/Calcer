@@ -1,0 +1,26 @@
+#define ID Expression [description]
+#define Fcn Expression [unknown] [fcn_description] [unknown_description]
+:command
+Expresion [list1]
+Fcn [list1]
+
+#define ID Expression [description] : 定义一个名为ID全局的变量（可以带入其他的表达式），表达式为Expression，可以为他添加一个描述信息。如果描述信息中存在空格，请使用""
+:command : 目前支持的命令
+	set log on : 开启错误日志
+	set log off : 关闭错误日志
+	del log : 删除所有的历史错误日志
+	save log : 保存本次错误日志
+	list : 列出所有的定义的内容 
+	q : 退出
+Expression [list1] : 计算表达式。使用参数list1，list1是所有在Expression中出现的实参。
+Fcn [list] : 计算函数Fcn。使用参数list1，list1是所有在Fcn中出现的实参。
+
+例子：
+#define x 5
+#define y 5+6*x+4
+#define z fcn(x,y)+3
+
+5+3
+5+q*23+x q=sin(x)
+
+power(q,x) q=99
